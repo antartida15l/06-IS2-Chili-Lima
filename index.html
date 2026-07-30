@@ -3,52 +3,87 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Préstamos de equipos | IS II</title>
+    <title>Préstamos de Equipos | IS II</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+
     <header class="topbar">
-      <div>
-        <p class="eyebrow">Ingeniería de Software II</p>
-        <h1>Registro de préstamos de equipos</h1>
-        <p class="subtitle">Miniaplicación base para una práctica de aseguramiento de calidad.</p>
+      <div class="topbar__brand">
+        <span class="topbar__eyebrow">Ingeniería de Software II</span>
+        <h1 class="topbar__title">Registro de Préstamos</h1>
+        <p class="topbar__sub">Control de equipos · Validación en días hábiles activa</p>
       </div>
-      <button class="secondary" id="resetDemoBtn" type="button">Restablecer datos de ejemplo</button>
+      <div class="topbar__actions">
+        <div class="topbar__badge">
+          <span class="badge-dot"></span>
+          Solo días hábiles
+        </div>
+        <button class="btn btn--ghost" id="resetDemoBtn" type="button">
+          ↺ Restablecer datos
+        </button>
+      </div>
     </header>
 
     <main class="layout">
-      <section class="panel form-panel" aria-labelledby="formTitle">
-        <h2 id="formTitle">Nuevo préstamo</h2>
-        <p class="help">Complete todos los campos. Los datos se guardan solo en este navegador.</p>
+
+      <section class="card form-card" aria-labelledby="formTitle">
+        <div class="card__header">
+          <div class="card__icon">＋</div>
+          <div>
+            <h2 id="formTitle" class="card__title">Nuevo préstamo</h2>
+            <p class="card__sub">Campos obligatorios. Solo días hábiles.</p>
+          </div>
+        </div>
 
         <form id="loanForm" novalidate>
-          <label for="equipment">Equipo</label>
-          <select id="equipment" required></select>
 
-          <label for="borrower">Solicitante</label>
-          <input id="borrower" name="borrower" type="text" placeholder="Ej.: Ana Quispe" required />
+          <div class="field">
+            <label class="field__label" for="equipment">Equipo</label>
+            <select id="equipment" class="field__control" required></select>
+          </div>
 
-          <div class="two-columns">
-            <div>
-              <label for="loanDate">Fecha de préstamo</label>
-              <input id="loanDate" name="loanDate" type="date" required />
+          <div class="field">
+            <label class="field__label" for="borrower">Solicitante</label>
+            <input id="borrower" name="borrower" type="text"
+              class="field__control"
+              placeholder="Ej.: Ana Quispe" required autocomplete="off" />
+            <span class="field__error" id="borrowerError" hidden></span>
+          </div>
+
+          <div class="date-stack">
+            <div class="date-node date-node--start">
+              <span class="date-node__dot" aria-hidden="true"></span>
+              <div class="field field--no-margin">
+                <label class="field__label" for="loanDate">
+                  Fecha de préstamo
+                  <span class="field__hint">Lun – Vie</span>
+                </label>
+                <input id="loanDate" name="loanDate" type="date" class="field__control" required />
+              </div>
             </div>
-            <div>
-              <label for="returnDate">Fecha prevista de devolución</label>
-              <input id="returnDate" name="returnDate" type="date" required />
+            <div class="date-node date-node--end">
+              <span class="date-node__dot" aria-hidden="true"></span>
+              <div class="field field--no-margin">
+                <label class="field__label" for="returnDate">Devolución prevista</label>
+                <input id="returnDate" name="returnDate" type="date" class="field__control" required />
+              </div>
             </div>
           </div>
 
-          <p class="form-message" id="formMessage" aria-live="polite"></p>
-          <button class="primary" type="submit">Registrar préstamo</button>
+          <button class="btn btn--primary" type="submit">Registrar préstamo</button>
         </form>
       </section>
 
-      <section class="panel list-panel" aria-labelledby="listTitle">
-        <div class="section-heading">
+      <section class="card list-card" aria-labelledby="listTitle">
+        <div class="card__header card__header--row">
+          <div class="card__icon card__icon--alt">≡</div>
           <div>
-            <h2 id="listTitle">Préstamos registrados</h2>
-            <p class="help">Puede marcar un préstamo como devuelto.</p>
+            <h2 id="listTitle" class="card__title">Préstamos registrados</h2>
+            <p class="card__sub">Marque como devuelto cuando corresponda.</p>
           </div>
           <span class="counter" id="activeCount">0 activos</span>
         </div>
@@ -60,7 +95,7 @@
                 <th>Equipo</th>
                 <th>Solicitante</th>
                 <th>Préstamo</th>
-                <th>Devolución prevista</th>
+                <th>Devolución</th>
                 <th>Estado</th>
                 <th>Acción</th>
               </tr>
@@ -68,11 +103,21 @@
             <tbody id="loanList"></tbody>
           </table>
         </div>
-        <p class="empty-state" id="emptyState">Aún no hay préstamos registrados.</p>
+
+        <p class="empty-state" id="emptyState">
+          <span class="empty-state__icon"> </span><br />
+          Aún no hay préstamos registrados.
+        </p>
       </section>
+
     </main>
 
-    <footer>Actividad individual — ver README.md y la guía del docente.</footer>
+    <footer class="footer">
+      Andre'e Alessandro Chili Lima
+      <span class="footer__divider">·</span>
+      Actividad Practica
+    </footer>
+
     <script src="app.js"></script>
   </body>
 </html>
