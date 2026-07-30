@@ -12,10 +12,9 @@ No usa base de datos ni servidor; guarda los registros en el navegador mediante 
 | **Nombre** | [Tu nombre completo] |
 | **Número en lista** | 06 |
 | **Ficha asignada** | 06 — Préstamos solo en días hábiles |
-| **Repositorio** | `https://github.com/TU-USUARIO/06-IS2-apellidopaterno-apellidomaterno` |
-| **GitHub Pages** | `https://TU-USUARIO.github.io/06-IS2-apellidopaterno-apellidomaterno/` |
+| **Repositorio** | `https://github.com/antartida15l/06-IS2-Chili-Lima` |
+| **GitHub Pages** | `https://antartida15l.github.io/06-IS2-Chili-Lima/` |
 
-> Reemplace `TU-USUARIO` y los apellidos por sus datos reales antes de entregar.
 
 ---
 
@@ -119,8 +118,8 @@ function handleWeekendLoanDate(fechaISO) {
 
 | Caso | Datos de entrada / acción | Resultado esperado | Resultado obtenido | Estado |
 |---|---|---|---|---|
-| **CP-01: válido** | Equipo: Laptop Lenovo (EQ-01). Solicitante: Ana Quispe. Fecha de préstamo: **28/07/2026 (lunes)**. Fecha de devolución: 31/07/2026. Acción: clic en "Registrar préstamo". | El sistema debe aceptar la fecha de lunes, guardar el préstamo y mostrarlo en la tabla con estado **Activo**. El contador debe incrementar a 1 activo. | El préstamo "Laptop Lenovo — Ana Quispe" apareció en la tabla con estado Activo y el contador mostró 1 activo. El sistema mostró una ventana centrada de confirmación indicando que el registro fue exitoso. | ✅ Aprobado |
-| **CP-02: inválido/límite** | Equipo: Laptop HP (EQ-02). Solicitante: Carlos Mamani. Fecha de préstamo: **26/07/2026 (sábado)**. Fecha de devolución: 29/07/2026. Acción: clic en "Registrar préstamo". | El sistema debe rechazar la fecha de sábado, mostrar un mensaje indicando que ese día no es hábil y no agregar ninguna fila a la tabla. | Apareció una ventana centrada con el mensaje **"La fecha de préstamo seleccionada (Sábado 26 jul. 2026) no es un día hábil. Solo se permiten préstamos de lunes a viernes."**, con la opción adicional de pasar al siguiente día hábil (lunes 27/07/2026). Al no aceptarla, la tabla no registró el préstamo y el contador permaneció sin cambios. | ✅ Aprobado |
+| **CP-01: válido** | Equipo: Laptop Lenovo (EQ-01). Solicitante: Ana Quispe. Fecha de préstamo: **28/07/2026 (lunes)**. Fecha de devolución: 31/07/2026. Acción: clic en "Registrar préstamo". | El sistema debe aceptar la fecha de lunes, guardar el préstamo y mostrarlo en la tabla con estado **Activo**. El contador debe incrementar a 1 activo. | El préstamo "Laptop Lenovo — Ana Quispe" apareció en la tabla con estado Activo y el contador mostró 1 activo. El sistema mostró una ventana centrada de confirmación indicando que el registro fue exitoso. |  Aprobado |
+| **CP-02: inválido/límite** | Equipo: Laptop HP (EQ-02). Solicitante: Carlos Mamani. Fecha de préstamo: **26/07/2026 (sábado)**. Fecha de devolución: 29/07/2026. Acción: clic en "Registrar préstamo". | El sistema debe rechazar la fecha de sábado, mostrar un mensaje indicando que ese día no es hábil y no agregar ninguna fila a la tabla. | Apareció una ventana centrada con el mensaje **"La fecha de préstamo seleccionada (Sábado 26 jul. 2026) no es un día hábil. Solo se permiten préstamos de lunes a viernes."**, con la opción adicional de pasar al siguiente día hábil (lunes 27/07/2026). Al no aceptarla, la tabla no registró el préstamo y el contador permaneció sin cambios. |  Aprobado |
 
 ---
 
@@ -153,7 +152,6 @@ function handleWeekendLoanDate(fechaISO) {
 | Dos casos de prueba | En este `README.md`: acción o datos, resultado esperado, resultado obtenido y estado. |
 | Informe técnico impreso | Nombre del estudiante y número de ficha, nombre de la mejora, criterios de aceptación, resumen de CP-01 y CP-02, resultado de cada prueba (aprobado/fallido), URL del repositorio y de GitHub Pages, rúbrica de evaluación. |
 
-> Cada estudiante debe crear su propio repositorio y subir allí los archivos antes de publicar.
 
 ---
 
