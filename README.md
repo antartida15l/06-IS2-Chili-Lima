@@ -9,7 +9,7 @@ No usa base de datos ni servidor; guarda los registros en el navegador mediante 
 
 | Campo | Detalle |
 |---|---|
-| **Nombre** | [Tu nombre completo] |
+| **Nombre** | Andre'e Alessandro Chili Lima|
 | **Número en lista** | 06 |
 | **Ficha asignada** | 06 — Préstamos solo en días hábiles |
 | **Repositorio** | `https://github.com/antartida15l/06-IS2-Chili-Lima` |
@@ -140,31 +140,6 @@ function handleWeekendLoanDate(fechaISO) {
 - **Criterios de aceptación:** Una fecha de lunes a viernes se registra; una fecha de fin de semana se rechaza.
 - **CP-01 (válido):** Registrar una fecha de lunes a viernes se registra.
 - **CP-02 (inválido/límite/cancelación):** una fecha de fin de semana se rechaza.
-
----
-
-## Entregables de la actividad
-
-| Entregable | Contenido mínimo |
-|---|---|
-| Repositorio individual | Código de la miniaplicación y `README.md` actualizado. |
-| Aplicación publicada | URL de GitHub Pages funcional. |
-| Dos casos de prueba | En este `README.md`: acción o datos, resultado esperado, resultado obtenido y estado. |
-| Informe técnico impreso | Nombre del estudiante y número de ficha, nombre de la mejora, criterios de aceptación, resumen de CP-01 y CP-02, resultado de cada prueba (aprobado/fallido), URL del repositorio y de GitHub Pages, rúbrica de evaluación. |
-
-
----
-
-## Rúbrica de evaluación
-
-| Criterio | Evidencia | Pts |
-|---|---|---|
-| Mejora funcional implementada | Validación activa en `app.js`; no daña la función base. | 4.0 |
-| Pruebas documentadas | CP-01 y CP-02 completos con datos, resultado esperado, resultado obtenido y estado. | 2.0 |
-| README y trazabilidad | Este archivo con instrucciones, tabla de pruebas y enlaces al repositorio y Pages. | 1.0 |
-| Código y usabilidad | Cambios comprensibles, mensaje de error claro con nombre del día, interfaz funcional. | 1.5 |
-| Despliegue GitHub Pages | URL funcional donde se puede probar la mejora directamente. | 1.5 |
-| **Total** | | **10.0 / 20** _(escala docente)_ |
 
 ---
 
